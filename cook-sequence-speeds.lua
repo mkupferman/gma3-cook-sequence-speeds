@@ -61,10 +61,12 @@ local function main(handle, seqNameArg)
 
                             local selection = recipe['SELECTION']
                             local groupIndex = selection['INDEX']
+                            Cmd("preview on")
                             Cmd("clearall")
                             Cmd("group " .. groupIndex)
                             local numFixtures = SelectionCount() + 0.0
                             Cmd("clearall")
+                            Cmd("preview off")
                             Echo("Using " .. numFixtures .. " fixtures")
 
                             local currentSpeed = recipe['SPEEDFROMX']
