@@ -4,7 +4,6 @@
 -- of fixtures in the selection. It then cooks the sequence (overwriting).
 -- This is useful if you are creating phasers that should step along
 -- to the beat of the music.
-
 -- SAMPLE WORKFLOW:
 -- 1. Create a phaser with N steps and set its "Measure" attribute to N.
 -- 2. Create a sequence based on recipes, and reference the phaser.
@@ -12,7 +11,6 @@
 -- 4. Label the sequence and ensure it is set to a speedmaster.
 -- 5. Build your selections and run this with the sequence *name* (not number)
 --    (e.g. `call plugin 1 "Sequence Name"`)
-
 -- NOTE:
 -- In the absence of BlindEdit in MA3 at the time of writing,
 -- this will clear out the programmer and select the sequence
@@ -20,7 +18,6 @@
 -- Be aware of your selection grid. If you have multi-instance
 -- fixtures in your group, know that each box in the grid
 -- counts toward the divisor.
-
 local function usage()
     Echo("Usage: call plugin <N> \"Sequence Name\"")
 end
