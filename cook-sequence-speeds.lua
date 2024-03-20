@@ -68,8 +68,16 @@ local function main(handle, seqNameArg)
 
                             local currentSpeed = recipe['SPEEDFROMX']
                             local newSpeed = baseSpeed / numFixtures
-                            recipe['SPEEDFROMX'] = newSpeed / 60.0
-                            Echo("Setting speed to " .. newSpeed .. " from baseline " .. baseSpeed)
+
+                            -- GMA3 v2 sets in BPM. GMA3 v1 set in BPH[our]
+                            local versionMajor = tonumber(Version():sub(1, 1))
+                            if versionMajor < 2 then
+                                recipe['SPEEDFROMX'] = newSpeed / 60.0
+                            else
+                                recipe['SPEEDFROMX'] = newSpeed
+                            end
+
+                            Echo("Setting speed to " .. newSpeed .. " BPM from baseline " .. baseSpeed)
                         end
                     end
                 end
